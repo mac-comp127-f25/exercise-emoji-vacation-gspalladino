@@ -43,15 +43,15 @@ public class EmojiVacation {
 
         addCloudRows(canvas);
 
-        // TODO: [Instructions step 2] Create mountains 50% of the time.
-        //       You should randomly determine the size and number of layers
-        //       (within reasonable constraints).
+        if (percentChance(50)){
+            addMountains(canvas, 400, randomInt(100, 500), randomInt(1, 4));
+        }
 
         addGround(canvas, 400);
 
-        // TODO: [Instructions step 2] Create forests 60% of the time. You should randomly
-        //       determine the count for the number of trees. Pick reasonable values for
-        //       other parameters.
+        if (percentChance(60)){
+            addForest(canvas, 400, 200, randomInt(1, 15));
+        }
 
         List<GraphicsGroup> family = createFamily(2, 3);
         positionFamily(family, 60, 550, 20);
